@@ -7,7 +7,7 @@ with open('README.rst') as f:
 with open('LICENSE') as f:
     license = f.read()
 
-requires = ['console']
+requires = ['console', 'cliff']
 
 setup(
     name='pydrupal',
@@ -29,6 +29,10 @@ setup(
     entry_points={
         'console_scripts': [
             'drupal = pydrupal.main:main'
+            ],
+            'pydrupal.commands':[
+                'module = pydrupal.commands.module:Module',
+                'init = pydrupal.commands.init:Init',
             ]
         },
     zip_safe=False,
